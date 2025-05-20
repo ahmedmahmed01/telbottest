@@ -8,7 +8,13 @@ TOKEN = "8116708167:AAGpx-sO13KIPJzZLpl8MtutDf8bMnIK0PQ"
 
 # دستور /start برای تست اولیه
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("سلام! من ربات هستم. هر پیامی بدی آی‌دی‌تو چاپ می‌کنم.")
+    user = update.message.from_user
+    user_id = user.id
+    username = user.username
+    full_name = f"{user.first_name or ''} {user.last_name or ''}".strip()
+
+
+    await update.message.reply_text("سلام {user_id}")
 
 # تابع گرفتن و چاپ آی‌دی کاربر
 async def show_user_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
