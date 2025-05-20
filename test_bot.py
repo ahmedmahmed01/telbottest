@@ -4,10 +4,11 @@ nest_asyncio.apply()
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-TOKEN = "8087765766:AAHZP3brmuQn_L2fh42Iypm_AEtEDEEfKCM"
+TOKEN = "8116708167:AAGpx-sO13KIPJzZLpl8MtutDf8bMnIK0PQ"
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("سلام! من یک ربات هستم.")
+async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    print(f"User ID: {update.message.from_user.id}")
+    await update.message.reply_text("سلام به همگی!")
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(update.message.text)
