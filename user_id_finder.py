@@ -4,7 +4,7 @@ nest_asyncio.apply()
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-TOKEN = "توکن_ربات_تو"
+TTOKEN = "8116708167:AAGpx-sO13KIPJzZLpl8MtutDf8bMnIK0PQ"
 
 # دستور /start برای تست اولیه
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
