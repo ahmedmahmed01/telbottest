@@ -1,24 +1,17 @@
-import nest_asyncio
-nest_asyncio.apply()
-
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-TOKEN = "8087765766:AAHZP3brmuQn_L2fh42Iypm_AEtEDEEfKCM"
+import os
+
+TOKEN = os.getenv("BOT_TOKEN")  # توکن رو از محیط بگیر
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("سلام! من یک ربات هستم.")
-
-async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(update.message.text)
+    await update.message.reply_text("سلام! من ربات هستم و روی Render اجرا می‌شم.")
 
 async def main():
     app = ApplicationBuilder().token(TOKEN).build()
-
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
-
-    print("✅ ربات در حال اجراست...")
+    print("🤖 ربات در حال اجراست...")
     await app.run_polling()
 
 if __name__ == "__main__":
