@@ -6,10 +6,8 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 
 TOKEN = "8116708167:AAHBAmCionn4V7EaL0kbSbU_iqvNrBnCmZs"
 
-# دستور /start برای تست اولیه
-# پاسخ به دستور /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("سلام.")
+    await update.message.reply_text("سلام!نصیری هستم.")
 
 # پاسخ به هر پیام متنی با آی‌دی کاربر
 async def show_user_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
