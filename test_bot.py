@@ -8,7 +8,7 @@ TOKEN = "8116708167:AAGpx-sO13KIPJzZLpl8MtutDf8bMnIK0PQ"
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(f"User ID: {update.message.from_user.id}")
-    await update.message.reply_text("سلام به همگی!")
+    await update.message.reply_text("سلام: {update.message.from_user.id}")
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(update.message.text)
